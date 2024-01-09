@@ -1,0 +1,42 @@
+﻿<Window 
+        x:Class="POL_EKO_TempMonitor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POL_EKO_TempMonitor"
+        mc:Ignorable="d"
+        Title="POL-EKO" Height="450" Width="800" WindowState="Maximized"
+        >
+    <Grid>
+        <TextBlock
+                   Background="#017CC4" Height="17" VerticalAlignment="Top">
+        <Menu>
+            <MenuItem Header="Ustawienia" BorderThickness="0" Background="#017CC4" Foreground="white">
+                <MenuItem Header="Zmień adres IP" Click="ChangeIpAddress_Click" Foreground="Black"/>
+                <MenuItem Header="Wybierz interwał zapisu:" Foreground="Black">                        
+                    <StackPanel>
+                        <RadioButton x:Name="option1" Content="5 minut" GroupName="Opcje" Click="option1_Click"/>
+                        <RadioButton x:Name="option2" Content="10 minut" GroupName="Opcje" Click="option2_Click"/>
+                        <RadioButton x:Name="option3" Content="15 minut" GroupName="Opcje" Click="option3_Click"/>
+                    </StackPanel>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        </TextBlock>
+        <TextBlock x:Name="temperatureTextBlock" TextAlignment="Center" FontSize="72" Margin="150,112,150,217" Foreground="#017CC4"/>
+        <TextBlock x:Name="measurementDateTextBlock" TextAlignment="Center" FontSize="20" Margin="0,296,550,99" Foreground="#017CC4"/>
+        <Border Background="#017CC4" CornerRadius="0, 0, 20, 20" Margin="150,0,150,0" Height="60" VerticalAlignment="Top">
+            <TextBlock x:Name="measurementTimeTextBlock" FontSize="20" TextAlignment="Center" Foreground="White" Height="55" VerticalAlignment="Center"/>
+        </Border>
+        <TextBlock Margin="563,296,0,99" FontSize="20" TextAlignment="Center" Foreground="#017CC4">
+            <TextBlock x:Name="status"/>
+        <TextBlock x:Name="isWorkingTextBlock" FontSize="20" TextAlignment="Left"  RenderTransformOrigin="0.5,0.5" Width="133">
+        </TextBlock>
+        </TextBlock>
+        <TextBlock x:Name="temperatureTextBlockInfo" TextAlignment="Center" FontSize="20" Margin="150,80,150,306" Foreground="#017CC4"/>
+        <Button Background="#017CC4" Foreground="White" Content="Zapisz" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click" Margin="25,402,0,0" Width="100" Height="26"/>
+        <Button Background="#017CC4" Foreground="White" Content="Wyświetl Wykres" HorizontalAlignment="Left" Margin="25,371,0,0" VerticalAlignment="Top" Click="Show2_Click" Width="100" Height="26"/>
+        <Button Background="#017CC4" Foreground="White" Content="Wyświetl Raport" HorizontalAlignment="Left" Margin="25,340,0,0" VerticalAlignment="Top" Click="Show_Click" Width="100" Height="26"/>
+    </Grid>
+</Window>

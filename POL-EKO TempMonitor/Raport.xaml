@@ -1,0 +1,20 @@
+﻿<Window x:Class="POL_EKO_TempMonitor.Raport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POL_EKO_TempMonitor"
+        mc:Ignorable="d"
+        Title="Raport" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="raportDataGrid" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Temperatura w ℃" Binding="{Binding temp}" />
+                <DataGridTextColumn Header="Długość pomiaru" Binding="{Binding mTime}" />
+                <DataGridTextColumn Header="Data i godzina pomiaru" Binding="{Binding dTime}" />
+                <DataGridTextColumn Header="Czy działa?" Binding="{Binding isWorking}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Eksport do pliku Excel" HorizontalAlignment="Left" Margin="437,3,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+    </Grid>
+</Window>
